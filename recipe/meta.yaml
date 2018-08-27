@@ -1,4 +1,4 @@
-{% set version = "2.6.0" %}
+{% set version = "2.7.0" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/R.utils_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/R.utils/R.utils_{{ version }}.tar.gz
-  sha256: 5d64993d1209b512a4e97f2edecdbc185f4a369ee5fa2e334ed2cf017486470e
+  sha256: f640ba0019d9d6883a1c634d7c9904b013de4c0bdf5d9e3d7ba49fa248b0b033
 
 build:
   number: 0
