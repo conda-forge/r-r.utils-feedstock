@@ -1,4 +1,4 @@
-{% set version = "2.9.1" %}
+{% set version = '2.9.1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,16 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: R.utils_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/R.utils_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/R.utils/R.utils_{{ version }}.tar.gz
   sha256: 1d118098226d2d27d2859641357fd07aeec004d64ca7b4b077495c6756c65d8a
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
   number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -27,11 +26,11 @@ requirements:
   host:
     - r-base
     - r-r.methodss3 >=1.7.1
-    - r-r.oo >=1.21.0
+    - r-r.oo >=1.23.0
   run:
     - r-base
     - r-r.methodss3 >=1.7.1
-    - r-r.oo >=1.21.0
+    - r-r.oo >=1.23.0
 
 test:
   commands:
@@ -40,16 +39,31 @@ test:
 
 about:
   home: https://github.com/HenrikBengtsson/R.utils
-  license: LGPL (>= 2.1)
+  license: LGPL-2.1
   summary: Utility functions useful when programming and developing R packages.
   license_family: LGPL
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/LGPL-2.1'
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+
+# Package: R.utils
+# Version: 2.9.1
+# Depends: R (>= 2.14.0), R.oo (>= 1.23.0)
+# Imports: methods, utils, tools, R.methodsS3 (>= 1.7.1)
+# Suggests: digest (>= 0.6.10)
+# Title: Various Programming Utilities
+# Authors@R: c(person("Henrik", "Bengtsson", role=c("aut", "cre", "cph"), email = "henrikb@braju.com"))
+# Author: Henrik Bengtsson [aut, cre, cph]
+# Maintainer: Henrik Bengtsson <henrikb@braju.com>
+# Description: Utility functions useful when programming and developing R packages.
+# License: LGPL (>= 2.1)
+# LazyLoad: TRUE
+# URL: https://github.com/HenrikBengtsson/R.utils
+# BugReports: https://github.com/HenrikBengtsson/R.utils/issues
+# NeedsCompilation: no
+# Packaged: 2019-12-05 16:48:18 UTC; hb
+# Repository: CRAN
+# Date/Publication: 2019-12-05 19:40:06 UTC
