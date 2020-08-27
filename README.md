@@ -5,7 +5,7 @@ Home: https://github.com/HenrikBengtsson/R.utils
 
 Package license: LGPL-2.1
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Utility functions useful when programming and developing R packages.
 
