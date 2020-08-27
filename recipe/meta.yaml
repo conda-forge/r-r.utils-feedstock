@@ -1,4 +1,4 @@
-{% set version = "2.9.2" %}
+{% set version = "2.10.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/R.utils_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/R.utils/R.utils_{{ version }}.tar.gz
-  sha256: ac6b3b8e814fbb855c38fbdb89a4f0cf0ed65ce7fa308445bd74107fbc0d32cf
+  sha256: 957a4f51998c79403a50f6a46266e6553bbf08757b26bf80603a423bceb45abf
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -25,11 +25,11 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
-    - r-r.methodss3 >=1.7.1
+    - r-r.methodss3 >=1.8.0
     - r-r.oo >=1.23.0
   run:
     - r-base
-    - r-r.methodss3 >=1.7.1
+    - r-r.methodss3 >=1.8.0
     - r-r.oo >=1.23.0
 
 test:
@@ -39,11 +39,11 @@ test:
 
 about:
   home: https://github.com/HenrikBengtsson/R.utils
-  license: LGPL-2.1
+  license: LGPL-2.1-or-later
   summary: Utility functions useful when programming and developing R packages.
   license_family: LGPL
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/LGPL-2.1'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/LGPL-2.1
 
 extra:
   recipe-maintainers:
