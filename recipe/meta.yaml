@@ -25,11 +25,11 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
-    - r-r.methodss3 >=1.7.1
+    - r-r.methodss3 >=1.8.0
     - r-r.oo >=1.23.0
   run:
     - r-base
-    - r-r.methodss3 >=1.7.1
+    - r-r.methodss3 >=1.8.0
     - r-r.oo >=1.23.0
 
 test:
@@ -39,7 +39,7 @@ test:
 
 about:
   home: https://github.com/HenrikBengtsson/R.utils
-  license: LGPL-2.1
+  license: LGPL-2.1-or-later
   summary: Utility functions useful when programming and developing R packages.
   license_family: LGPL
   license_file:
