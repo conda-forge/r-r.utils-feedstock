@@ -1,4 +1,4 @@
-{% set version = "2.12.1" %}
+{% set version = "2.12.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/R.utils_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/R.utils/R.utils_{{ version }}.tar.gz
-  sha256: 3eb82903bee99f9684cd9dbd4f92d682fdb82feb7ff32a70aa54550e9e09ad62
+  sha256: fe3cf1aa8641540634e96990294d0202d4d94ec79ce73aaf78e4eda30fcb8836
 
 build:
   merge_build_host: true  # [win]
